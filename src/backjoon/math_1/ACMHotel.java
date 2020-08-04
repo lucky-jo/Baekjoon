@@ -1,12 +1,14 @@
-package backjoon.math_1;
+package math_1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ACMHotel {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        List<Integer> list = new ArrayList<>();
         int testCase = Integer.parseInt(scanner.nextLine());
         int h = 0;
         int w = 0;
@@ -19,10 +21,13 @@ public class ACMHotel {
             n = Integer.parseInt(strings[2]);
 
             if(n % h == 0 ) {
-                System.out.println( ( n%h) + "" + n/h <);
+                list.add( h*100 + (n/h) );
             } else {
-                System.out.println( String.valueOf(n%h + "" + ((n/h)+1 < 10 ? 0+""+ (int)((n/h)+1) : (int)(n/h)+1))  );
+                list.add( (n%h)*100 + (n/h+1) );
             }
+        }
+        for (Integer x: list  ) {
+            System.out.println(x);
         }
     }
 }
